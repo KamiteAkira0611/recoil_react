@@ -1,0 +1,14 @@
+version: "3"
+services:
+  react:
+    build:
+      context: ../
+      dockerfile: ./docker/react/Dockerfile
+    image: recoil-test-react
+    container_name: recoil-test-react
+    command: npm start
+    volumes:
+      - ../react/:/app
+    ports:
+      - "9998:3000"
+    stdin_open: true
